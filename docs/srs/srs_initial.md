@@ -18,7 +18,6 @@ header-includes:
 - [Specifications](#specifications)
   - [Actors](#actors)
   - [Actions](#actions)
-    - [Actions related to administration](#actions-related-to-administration)
     - [Actions related to books](#actions-related-to-books)
     - [Actions related to E-Resources / Journals](#actions-related-to-e-resources--journals)
     - [Some miscellaneous actions](#some-miscellaneous-actions)
@@ -75,18 +74,6 @@ Note that **user** is a generic term that refers to any of the above actors.
 
 Below is the list of actions that we intend to support.
 
-### Actions related to administration
-
-| Action                | Actor       | Description                    |
-| --------------------- | ----------- | ------------------------------ |
-| Add new member        | Admin       | Add new member to the library  |
-| Remove member         | Admin       | Remove member from the library |
-| Update member details | Admin, User | Update member details          |
-| Add fine              | Librarian   | Add fine to a member           |
-| Remove fine           | Librarian   | Remove fine from a member      |
-| Update fine details   | Librarian   | Update fine details            |
-| Pay fine              | User        | Pay fine                       |
-
 ### Actions related to books
 
 | Action                    | Actor      | Description                              |
@@ -117,12 +104,5 @@ Below is the list of actions that we intend to support.
 
 ### Some miscellaneous actions
 
-| Action             | Actor | Description                    |
-| ------------------ | ----- | ------------------------------ |
-| View New Arrivals  | User  | View new arrivals              |
-| View Popular Books | User  | View popular books             |
 | View Information   | User  | View information about library |
 | Support Tools      | User  | View support tools             |
-| Login              | User  | Login to the library           |
-| Logout             | User  | Logout from the library        |
-| View Profile       | User  | View profile                   |
