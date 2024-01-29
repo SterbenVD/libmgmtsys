@@ -1,9 +1,9 @@
 ---
 title: SRS for Library Management System
 author: Group 14
-geometry: margin=2cm
+geometry: margin=1.5cm
 documentclass: extarticle
-fontsize: 14pt
+fontsize: 12pt
 header-includes:
     - \usepackage{setspace}
     - \onehalfspacing
@@ -13,11 +13,10 @@ header-includes:
 
 - [Index](#index)
 - [Introduction](#introduction)
-  - [Overview](#overview)
   - [Purpose](#purpose)
   - [Scope](#scope)
-- [Overall Description](#overall-description)
   - [Product Perspective](#product-perspective)
+- [Overall Description](#overall-description)
   - [User Characteristics](#user-characteristics)
     - [Admin](#admin)
     - [Librarian](#librarian)
@@ -44,31 +43,37 @@ header-includes:
       - [Update book](#update-book)
       - [Add new book copy](#add-new-book-copy)
       - [Remove book copy](#remove-book-copy)
-      - [](#)
+      - [Add new E-Resource](#add-new-e-resource)
+      - [Remove E-Resource](#remove-e-resource)
+      - [Update E-Resource](#update-e-resource)
+      - [View Book Catalog](#view-book-catalog)
+      - [View E-Resource Catalog](#view-e-resource-catalog)
+      - [Search for Book/E-Resource/Journal](#search-for-booke-resourcejournal)
       - [View New Arrivals](#view-new-arrivals)
       - [View Popular Books](#view-popular-books)
+      - [View Book/E-Resource/Journal Details](#view-booke-resourcejournal-details)
+      - [Issue Book](#issue-book)
+      - [Update Book Issue Details](#update-book-issue-details)
+      - [Borrow Book](#borrow-book)
+      - [Reserve Book](#reserve-book)
+      - [Return Book](#return-book)
+      - [Request Book](#request-book)
+      - [Request E-Resource/Journal](#request-e-resourcejournal)
+      - [Read E-Resource/Journal](#read-e-resourcejournal)
+      - [View All Book Issues/Returns/Reservations/Requests of a Member](#view-all-book-issuesreturnsreservationsrequests-of-a-member)
+      - [View All Requests](#view-all-requests)
+      - [Update Request](#update-request)
+      - [View All Unresolved Issues/Returns/Reservations/Requests](#view-all-unresolved-issuesreturnsreservationsrequests)
     - [Miscellanous Use Cases](#miscellanous-use-cases)
       - [View Infomation/FAQs (Frequently Asked Questions)](#view-infomationfaqs-frequently-asked-questions)
-  - [Assumptions and Dependencies](#assumptions-and-dependencies)
-  - [Constraints](#constraints)
-- [Specific Requirements](#specific-requirements)
-- [Acceptance Criteria](#acceptance-criteria)
+      - [View Contact Us](#view-contact-us)
+      - [View About Us](#view-about-us)
 - [Appendix](#appendix)
   - [References](#references)
 
 \newpage
 
 # Introduction
-
-## Overview
-
-The Library Management System is a software system that will automate the processes involved in the management of a library.
-
-Section [Purpose](#purpose) gives a brief description of the purpose of the system.
-
-Section [Scope](#scope) gives a brief description of the scope of the system, including the stakeholders and the features of the system.
-
-
 
 ## Purpose
 
@@ -91,13 +96,13 @@ The system will manage the following:
 - Fines
 - Book issues, returns, reservations and requests
 
-\newpage
-
-# Overall Description
-
 ## Product Perspective
 
 The Library Management System will be a standalone system that will be used by the library of a university. It will be used to manage the books, journals, e-resources, members and fines of the library. It will also be used to manage the issues, returns, reservations and requests of the library.
+
+\newpage
+
+# Overall Description
 
 ## User Characteristics
 
@@ -507,7 +512,109 @@ In case the user is logged in, they can log out of the system. If the user is no
         2. The system does not save the changes.
         3. The system displays the remove book copy page again.
 
-#### 
+#### Add new E-Resource
+
+- **Actor**: Librarian
+- **Description**: The librarian adds a new E-Resource to the system.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The new E-Resource is added to the system.
+- **Normal Flow**:
+  1. The librarian clicks on the add E-Resource button.
+  2. The system displays a form to add a new E-Resource.
+  3. The librarian enters the details of the new E-Resource.
+  4. The librarian clicks on the save button.
+  5. The system saves the details of the new E-Resource.
+  6. The system displays the list of E-Resources.
+- **Alternative Flows**:
+    - The librarian clicks on the cancel button.
+        1. The system does not save the changes.
+        2. The system displays the list of E-Resources.
+    - The librarian enter invalid data.
+        1. The system displays an error message.
+        2. The system does not save the changes.
+        3. The system displays the add E-Resource page again.
+    - The librarian enters data that already exists.
+        1. The system displays an error message.
+        2. The system does not save the changes.
+        3. The system displays the add E-Resource page again.
+
+#### Remove E-Resource
+
+- **Actor**: Librarian
+- **Description**: The librarian removes a E-Resource from the system.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The E-Resource is removed from the system.
+- **Normal Flow**:
+  1. The librarian clicks on the remove E-Resource button.
+  2. The system displays a form to remove a E-Resource.
+  3. The librarian enters the details of the E-Resource to be removed.
+  4. The librarian clicks on the save button.
+  5. The system removes the E-Resource.
+  6. The system displays the list of E-Resources.
+- **Alternative Flows**:
+    - The librarian clicks on the cancel button.
+        1. The system does not save the changes.
+        2. The system displays the list of E-Resources.
+    - The librarian enter invalid data.
+        1. The system displays an error message.
+        2. The system does not save the changes.
+        3. The system displays the remove E-Resource page again.
+
+#### Update E-Resource
+
+- **Actor**: Librarian
+- **Description**: The librarian updates the details of a E-Resource.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The details of the E-Resource are updated.
+- **Normal Flow**:
+  1. The librarian clicks on the update E-Resource button.
+  2. The system displays a form to update the details of a E-Resource.
+  3. The librarian enters the details of the E-Resource to be updated.
+  4. The librarian clicks on the save button.
+  5. The system updates the details of the E-Resource.
+  6. The system displays the list of E-Resources.
+- **Alternative Flows**:
+    - The librarian clicks on the cancel button.
+        1. The system does not save the changes.
+        2. The system displays the list of E-Resources.
+    - The librarian enter invalid data.
+        1. The system displays an error message.
+        2. The system does not save the changes.
+        3. The system displays the update E-Resource page again.
+
+#### View Book Catalog
+
+- **Actor**: User
+- **Description**: The user views the book catalog of the library.
+- **Preconditions**: None
+- **Postconditions**: The book catalog is displayed.
+- **Normal Flow**:
+  1. The user clicks on the catalog button.
+  2. The user clicks on the book catalog button.
+  3. The system displays the book catalog.
+
+#### View E-Resource Catalog
+
+- **Actor**: User
+- **Description**: The user views the E-Resource catalog of the library.
+- **Preconditions**: None
+- **Postconditions**: The E-Resource catalog is displayed.
+- **Normal Flow**:
+  1. The user clicks on the catalog button.
+  2. The user clicks on the E-Resource catalog button.
+  3. The system displays the E-Resource catalog.
+
+#### Search for Book/E-Resource/Journal
+
+- **Actor**: User
+- **Description**: The user searches for a book in the library.
+- **Preconditions**: None
+- **Postconditions**: The list of books matching the search query is displayed.
+- **Normal Flow**:
+  1. The user clicks on the catalog button.
+  2. The user enters the search query.
+  3. The user clicks on the search button.
+  4. The system displays the list of items matching the search query.
 
 #### View New Arrivals
 
@@ -531,7 +638,311 @@ In case the user is logged in, they can log out of the system. If the user is no
   2. The user clicks on the popular books button.
   3. The system displays the list of popular books.
 
+#### View Book/E-Resource/Journal Details
 
+- **Actor**: User
+- **Description**: The user views the details of a book in the library.
+- **Preconditions**: None
+- **Postconditions**: The details of the book are displayed.
+- **Normal Flow**:
+  1. The user clicks on the catalog button.
+  2. The user selects a item.
+  3. The user clicks on the item details button.
+  4. The system displays the details of the item.
+
+#### Issue Book
+
+- **Actor**: Librarian
+- **Description**: The librarian issues a book to a member.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The book is issued to the member.
+- **Normal Flow**:
+  1. The librarian clicks on the issue book button.
+  2. The system displays all the borrow requests by the members.
+  3. The librarian enters the details of the book to be issued and the member to whom the book is to be issued.
+  4. The librarian clicks on the save button.
+  5. The system issues the book to the member.
+  6. The system displays the list of books issued by the member.
+- **Alternative Flows**:
+    - The librarian clicks on the cancel button.
+        1. The system does not issue the book.
+        2. The system displays the list of books issued by the member.
+    - The librarian enter invalid data.
+        1. The system displays an error message.
+        2. The system does not issue the book.
+        3. The system displays the issue book page again.
+
+#### Update Book Issue Details
+
+- **Actor**: Librarian
+- **Description**: The librarian updates the details of a book issue.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The details of the book issue are updated.
+- **Normal Flow**:
+  1. The librarian clicks on the update book issue button.
+  2. The system displays a form to update the details of a book issue.
+  3. The librarian enters the details of the book issue to be updated.
+  4. The librarian clicks on the save button.
+  5. The system updates the details of the book issue.
+  6. The system displays the list of books issued by the member.
+- **Alternative Flows**:
+    - The librarian clicks on the cancel button.
+        1. The system does not update the book issue.
+        2. The system displays the list of books issued by the member.
+    - The librarian enter invalid data.
+        1. The system displays an error message.
+        2. The system does not update the book issue.
+        3. The system displays the update book issue page again.
+
+#### Borrow Book
+
+- **Actor**: User
+- **Description**: The user borrows a book from the library.
+- **Preconditions**: The user is logged in and the book is available.
+- **Postconditions**: A request is sent to the librarian to issue the book.
+- **Normal Flow**:
+  1. The user clicks on the borrow book button.
+  2. The system displays a form to borrow a book.
+  3. The user enters the details of the book to be borrowed.
+  4. The user clicks on the save button.
+  5. The system sends a request to the librarian to issue the book.
+  6. The system displays the list of books borrowed by the user.
+- **Alternative Flows**:
+    - The user clicks on the cancel button.
+        1. The system does not send the request.
+        2. The system displays the list of books borrowed by the user.
+    - The user enter invalid data.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the borrow book page again.
+    - The user has already borrowed the book.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the borrow book page again.
+    - The user has already borrowed the maximum number of books.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the borrow book page again.
+    - The user has pending fines.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the pay fine page.
+
+#### Reserve Book
+
+- **Actor**: User
+- **Description**: The user reserves a book from the library.
+- **Preconditions**: The user is logged in and the book is not available.
+- **Postconditions**: A request is sent to the librarian to reserve the book.
+- **Normal Flow**:
+  1. The user clicks on the reserve book button.
+  2. The system displays a form to reserve a book.
+  3. The user enters the details of the book to be reserved.
+  4. The user clicks on the save button.
+  5. The system sends a request to the librarian to reserve the book.
+  6. The system displays the list of books reserved by the user.
+- **Alternative Flows**:
+    - The user clicks on the cancel button.
+        1. The system does not send the request.
+        2. The system displays the list of books reserved by the user.
+    - The user enter invalid data.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the reserve book page again.
+    - The user has already reserved the book.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the reserve book page again.
+    - The user has already reserved the maximum number of books.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the reserve book page again.
+    - The user has already borrowed the book.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the reserve book page again.
+    - The user has already borrowed the maximum number of books.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the reserve book page again.
+    - The user has pending fines.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the pay fine page.
+    - E-Resource of the book is available.
+        1. The system displays that the E-Resource is available.
+        2. The system asks the user if they want to borrow the E-Resource.
+        3. Based on the user's response, the system either sends a request to the librarian to issue the book or displays the list of books reserved by the user.
+
+
+#### Return Book
+
+- **Actor**: User
+- **Description**: The user returns a book to the library.
+- **Preconditions**: The user is logged in and the book is issued to the user.
+- **Postconditions**: A request is sent to the librarian that the book is to be returned.
+- **Normal Flow**:
+  1. The user clicks on the return book button.
+  2. The system displays a form to return a book.
+  3. The user enters the details of the book to be returned.
+  4. The user clicks on the save button.
+  5. The system sends a request to the librarian that the book is to be returned.
+  6. The system displays the list of books returned by the user.
+- **Alternative Flows**:
+    - The user clicks on the cancel button.
+        1. The system does not send the request.
+        2. The system displays the list of books returned by the user.
+    - The user enter invalid data.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the return book page again.
+
+#### Request Book
+
+- **Actor**: User
+- **Description**: The user requests for a book to be added to the library.
+- **Preconditions**: The user is logged in.
+- **Postconditions**: A request is sent to the librarian to add the book.
+- **Normal Flow**:
+  1. The user clicks on the request book button.
+  2. The system displays a form to request a book.
+  3. The user enters the details of the book to be requested.
+  4. The user clicks on the save button.
+  5. The system sends a request to the librarian to add the book.
+  6. The system displays the list of books requested by the user.
+- **Alternative Flows**:
+    - The user clicks on the cancel button.
+        1. The system does not send the request.
+        2. The system displays the list of books requested by the user.
+    - The user enter invalid data.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the request book page again.
+    - The user has already requested the book.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the request book page again.
+    - The user has pending fines.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the pay fine page.
+
+#### Request E-Resource/Journal
+
+- **Actor**: User
+- **Description**: The user requests for a E-Resource/Journal to be added to the library.
+- **Preconditions**: The user is logged in.
+- **Postconditions**: A request is sent to the librarian to add the E-Resource/Journal.
+- **Normal Flow**:
+  1. The user clicks on the request E-Resource/Journal button.
+  2. The system displays a form to request a E-Resource/Journal.
+  3. The user enters the details of the E-Resource/Journal to be requested.
+  4. The user clicks on the save button.
+  5. The system sends a request to the librarian to add the E-Resource/Journal.
+  6. The system displays the list of E-Resources/Journals requested by the user.
+- **Alternative Flows**:
+    - The user clicks on the cancel button.
+        1. The system does not send the request.
+        2. The system displays the list of E-Resources/Journals requested by the user.
+    - The user enter invalid data.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the request E-Resource/Journal page again.
+    - The user has already requested the E-Resource/Journal.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the request E-Resource/Journal page again.
+    - The user has pending fines.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the pay fine page.
+
+#### Read E-Resource/Journal
+
+- **Actor**: User
+- **Description**: The user reads a E-Resource/Journal.
+- **Preconditions**: The user is logged in.
+- **Postconditions**: The E-Resource/Journal is read by the user.
+- **Normal Flow**:
+  1. The user clicks on the read E-Resource/Journal button.
+  2. The system displays a form to read a E-Resource/Journal.
+  3. The user enters the details of the E-Resource/Journal to be read.
+  4. The user clicks on the save button.
+  5. The system displays the E-Resource/Journal.
+- **Alternative Flows**:
+    - The user clicks on the cancel button.
+        1. The system does not display the E-Resource/Journal.
+        2. The system displays the home page of the user.
+    - The user enter invalid data.
+        1. The system displays an error message.
+        2. The system does not display the E-Resource/Journal.
+        3. The system displays the read E-Resource/Journal page again.
+    - The user does not have access to the E-Resource/Journal.
+        1. The system displays an error message.
+        2. The system does not display the E-Resource/Journal.
+        3. The system displays the home page of the user.
+    - The user has pending fines.
+        1. The system displays an error message.
+        2. The system does not send the request.
+        3. The system displays the pay fine page.
+
+#### View All Book Issues/Returns/Reservations/Requests of a Member
+
+- **Actor**: User
+- **Description**: The user views the list of all book issues/returns/reservations/requests of the user.
+- **Preconditions**: The user is logged in.
+- **Postconditions**: The list of all book issues/returns/reservations/requests of the user are displayed.
+- **Normal Flow**:
+  1. The user clicks on the view all button.
+  2. The system displays a form to view all book issues/returns/reservations/requests of the user.
+  3. The user selects the type of book issues/returns/reservations/requests.
+  4. The user clicks on the save button.
+  5. The system displays the list of all book issues/returns/reservations/requests of the user.
+
+#### View All Requests
+
+- **Actor**: Librarian
+- **Description**: The librarian views the list of all requests.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The list of all requests are displayed.
+- **Normal Flow**:
+  1. The librarian clicks on the view all requests button.
+  2. The system displays the list of all requests.
+
+#### Update Request
+
+- **Actor**: Librarian
+- **Description**: The librarian updates the details of a request.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The details of the request are updated.
+- **Normal Flow**:
+  1. The librarian clicks on the update request button.
+  2. The system displays a form to update the details of a request.
+  3. The librarian enters the details of the request to be updated.
+  4. The librarian clicks on the save button.
+  5. The system updates the details of the request.
+  6. The system displays the list of all requests.
+- **Alternative Flows**:
+    - The librarian clicks on the cancel button.
+        1. The system does not update the request.
+        2. The system displays the list of all requests.
+    - The librarian enter invalid data.
+        1. The system displays an error message.
+        2. The system does not update the request.
+        3. The system displays the update request page again.
+
+#### View All Unresolved Issues/Returns/Reservations/Requests
+
+- **Actor**: Librarian
+- **Description**: The librarian views the list of all unresolved book issues/returns/reservations/requests.
+- **Preconditions**: The librarian is logged in.
+- **Postconditions**: The list of all unresolved book issues/returns/reservations/requests are displayed.
+- **Normal Flow**:
+  1. The librarian clicks on the view all unresolved button.
+  2. The system displays a form to view all unresolved book issues/returns/reservations/requests.
+  3. The librarian selects the type of book issues/returns/reservations/requests.
+  4. The librarian clicks on the save button.
+  5. The system displays the list of all unresolved book issues/returns/reservations/requests.
 
 ### Miscellanous Use Cases
 
@@ -545,13 +956,27 @@ In case the user is logged in, they can log out of the system. If the user is no
   1. The user clicks on the information/FAQs button.
   2. The system displays the information/FAQs page.
 
-## Assumptions and Dependencies
+#### View Contact Us
 
-## Constraints
+- **Actor**: User
+- **Description**: The user views the contact us page of the library.
+- **Preconditions**: None
+- **Postconditions**: The contact us page of the library is displayed.
+- **Normal Flow**:
+  1. The user clicks on the contact us button.
+  2. The system displays the contact us page.
 
-# Specific Requirements
+#### View About Us
 
-# Acceptance Criteria
+- **Actor**: User
+- **Description**: The user views the about us page of the library.
+- **Preconditions**: None
+- **Postconditions**: The about us page of the library is displayed.
+- **Normal Flow**:
+  1. The user clicks on the about us button.
+  2. The system displays the about us page.
+
+\newpage
 
 # Appendix
 
