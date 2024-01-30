@@ -37,6 +37,7 @@ header-includes:
       - [Remove a fine](#remove-a-fine)
       - [Update a fine](#update-a-fine)
       - [Pay a fine](#pay-a-fine)
+      - [View Fines](#view-fines)
     - [Use Cases related to books/journals/e-resources](#use-cases-related-to-booksjournalse-resources)
       - [Add new book](#add-new-book)
       - [Remove book](#remove-book)
@@ -393,6 +394,17 @@ In case the user is logged in, they can log out of the system. If the user is no
         1. The system displays an error message.
         2. The system does not save the changes.
         3. The system displays the pay fine page again.
+
+#### View Fines
+
+- **Actor**: User
+- **Description**: The user views the list of fines.
+- **Preconditions**: The user is logged in.
+- **Postconditions**: The list of fines is displayed.
+- **Normal Flow**:
+  1. The user clicks on the fines button.
+  2. The system displays the list of fines.
+
 
 ### Use Cases related to books/journals/e-resources
 

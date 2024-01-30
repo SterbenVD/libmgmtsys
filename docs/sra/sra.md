@@ -12,9 +12,9 @@ header-includes:
 # Index
 - [Index](#index)
 - [Context Diagram](#context-diagram)
-  - [The user is responsible for:](#the-user-is-responsible-for)
 - [Data Flow Diagram(s)](#data-flow-diagrams)
 - [Function Point Analysis](#function-point-analysis)
+  - [Internal Logic Files](#internal-logic-files)
 
 \newpage
 
@@ -32,7 +32,9 @@ The librarian is responsible for:
 The admin is responsible for managing the users.
 
 The user is responsible for:
-- 
+- Request/Borrow/Return/Reserve books/e-resources/journals.
+- Paying fines.
+- In the physical world, transferring books between the library and the user.
 
 \newpage
 
@@ -43,4 +45,27 @@ The user is responsible for:
 # Function Point Analysis
 
 Consider the following table for function point analysis:
+
+| Function Type            | Low Complexity | Average Complexity | High Complexity |
+| ------------------------ | -------------- | ------------------ | --------------- |
+| Internal Logic Files     | 7              | 10                 | 15              |
+| External Interface Files | 5              | 7                  | 10              |
+| External Inputs          | 3              | 4                  | 6               |
+| External Outputs         | 4              | 5                  | 7               |
+| External Inquiries       | 3              | 4                  | 6               |
+
+## Internal Logic Files
+
+Consider the following rating of internal logic files:
+
+| Record Element Types | 1 - 19 | 20 - 50 | 51+ |
+| -------------------- | ------ | ------- | --- |
+| 1                    | Low    | Low     | Avg |
+| 2 - 5                | Low    | Avg     | High |
+| 6+                   | Avg    | High    | High |
+
+Consider the following internal logic files:
+
+| File Name | Record Element Types | Record Elements | Complexity |
+| --------- | -------------------- | --------------- | ---------- |
 
