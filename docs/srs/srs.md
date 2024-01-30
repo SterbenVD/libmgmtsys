@@ -54,7 +54,7 @@ header-includes:
       - [View Book/E-Resource/Journal Details](#view-booke-resourcejournal-details)
       - [Issue Book](#issue-book)
       - [Update Book Issue Details](#update-book-issue-details)
-      - [Borrow Book](#borrow-book)
+      - [Request Book Issue](#request-book-issue)
       - [Reserve Book](#reserve-book)
       - [Return Book](#return-book)
       - [Request Book](#request-book)
@@ -658,7 +658,7 @@ In case the user is logged in, they can log out of the system. If the user is no
 - **Postconditions**: The book is issued to the member.
 - **Normal Flow**:
   1. The librarian clicks on the issue book button.
-  2. The system displays all the borrow requests by the members.
+  2. The system displays all the issue requests by the members.
   3. The librarian enters the details of the book to be issued and the member to whom the book is to be issued.
   4. The librarian clicks on the save button.
   5. The system issues the book to the member.
@@ -694,35 +694,35 @@ In case the user is logged in, they can log out of the system. If the user is no
         2. The system does not update the book issue.
         3. The system displays the update book issue page again.
 
-#### Borrow Book
+#### Request Book Issue
 
 - **Actor**: User
-- **Description**: The user borrows a book from the library.
+- **Description**: The user request a book issue from the library.
 - **Preconditions**: The user is logged in and the book is available.
 - **Postconditions**: A request is sent to the librarian to issue the book.
 - **Normal Flow**:
-  1. The user clicks on the borrow book button.
-  2. The system displays a form to borrow a book.
-  3. The user enters the details of the book to be borrowed.
+  1. The user clicks on the request book issue button.
+  2. The system displays a form to request book issue.
+  3. The user enters the details of the book to be requested.
   4. The user clicks on the save button.
   5. The system sends a request to the librarian to issue the book.
-  6. The system displays the list of books borrowed by the user.
+  6. The system displays the list of requested books issues by the user. 
 - **Alternative Flows**:
     - The user clicks on the cancel button.
         1. The system does not send the request.
-        2. The system displays the list of books borrowed by the user.
+        2. The system displays the list of requested books issues by the user.
     - The user enter invalid data.
         1. The system displays an error message.
         2. The system does not send the request.
-        3. The system displays the borrow book page again.
-    - The user has already borrowed the book.
+        3. The system displays the request book issue page again.
+    - The user has already been issued the book.
         1. The system displays an error message.
         2. The system does not send the request.
-        3. The system displays the borrow book page again.
-    - The user has already borrowed the maximum number of books.
+        3. The system displays the request book issue page again.
+    - The user has already been issued the maximum number of books.
         1. The system displays an error message.
         2. The system does not send the request.
-        3. The system displays the borrow book page again.
+        3. The system displays the request book issue page again.
     - The user has pending fines.
         1. The system displays an error message.
         2. The system does not send the request.
@@ -757,11 +757,11 @@ In case the user is logged in, they can log out of the system. If the user is no
         1. The system displays an error message.
         2. The system does not send the request.
         3. The system displays the reserve book page again.
-    - The user has already borrowed the book.
+    - The user has already been issued the book.
         1. The system displays an error message.
         2. The system does not send the request.
         3. The system displays the reserve book page again.
-    - The user has already borrowed the maximum number of books.
+    - The user has already been issued the maximum number of books.
         1. The system displays an error message.
         2. The system does not send the request.
         3. The system displays the reserve book page again.
@@ -771,7 +771,7 @@ In case the user is logged in, they can log out of the system. If the user is no
         3. The system displays the pay fine page.
     - E-Resource of the book is available.
         1. The system displays that the E-Resource is available.
-        2. The system asks the user if they want to borrow the E-Resource.
+        2. The system asks the user if they want to read the E-Resource.
         3. Based on the user's response, the system either sends a request to the librarian to issue the book or displays the list of books reserved by the user.
 
 
@@ -796,6 +796,11 @@ In case the user is logged in, they can log out of the system. If the user is no
         1. The system displays an error message.
         2. The system does not send the request.
         3. The system displays the return book page again.
+    - The date of return is after the due date.
+        1. The request is sent to the librarian.
+        2. The system displays an error message that a fine is to be paid.
+        3. The system asks the user if they want to pay the fine.
+        4. If the user clicks on the yes button, the system displays the pay fine page.
 
 #### Request Book
 
