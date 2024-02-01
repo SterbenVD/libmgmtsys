@@ -1,7 +1,7 @@
 SRS_PATH = srs/srs.md
 SRA_PATH = sra/sra.md
-SRS_PDF_PATH = pdf/srs.pdf
-SRA_PDF_PATH = pdf/sra.pdf
+SRS_PDF_PATH = pdf/SRS\ Group\ 14.pdf
+SRA_PDF_PATH = pdf/SRA\ Group\ 14.pdf
 
 all: create_srs create_sra
 
