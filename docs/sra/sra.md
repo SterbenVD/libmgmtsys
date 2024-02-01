@@ -144,7 +144,8 @@ Complexity of functions here is estimated based on the number of inputs, outputs
 | ----------------------- | ---- | ---------- | --- |
 | Home                    | EO   | High       | 7   |
 | Read E-Resource/Journal | EO   | High       | 7   |
-| Total                   | -    | -          | 14  |
+| Forgot Password         | EO   | Average    | 5   |
+| Total                   | -    | -          | 19  |
 
 | Database                | Type | Complexity | FP  |
 | ----------------------- | ---- | ---------- | --- |
@@ -156,9 +157,14 @@ Complexity of functions here is estimated based on the number of inputs, outputs
 | Issue Data              | ILF  | Average    | 10  |
 | Total                   | -    | -          | 54  |
 
-Total Unadjusted Function Point Count(Total UFP): $\boxed{220}$
+| Integrations          | Type | Complexity | FP  |
+| --------------------- | ---- | ---------- | --- |
+| Payment Gateway       | EIF  | High       | 10  |
+| GMails                | EIF  | Average    | 7   |
+| Google Authentication | EIF  | Average    | 7   |
+| Total                 | -    | -          | 24  |
 
-\newpage
+Total Unadjusted Function Point Count(Total UFP): $\boxed{249}$
 
 ## Complexity Adjustment Factor
 
@@ -188,9 +194,9 @@ Thus, CAF = $0.65 + (0.01 * \sum^{i = 14}_{i = 1} F_i)$ = $0.65 + 0.18 = 0.83$
 
 ## Total Adjusted Function Point Count
 
-Total Adjusted Function Point Count(Total AFP) = Total UFP * CAF = $220 * 0.83 = 182.6 \approx \boxed{183}$
+Total Adjusted Function Point Count(Total AFP) = Total UFP * CAF = $249 * 0.83 = 206.67 \approx \boxed{207}$
 
-Considering that 1 FP = 50-60 LOC, the estimated LOC $= 183 * 50 \text{ to } 183 * 60 = 9150 \text{ to } 10980 \approx \boxed{\text{9000 to 11000 LOC}}$
+Considering that 1 FP = 50-60 LOC, the estimated LOC $= 207 * 50 \text{ to } 207 * 60 = 10350 \text{ to } 12420 \approx \boxed{\text{10000 to 12500 LOC}}$
 
 \newpage
 
