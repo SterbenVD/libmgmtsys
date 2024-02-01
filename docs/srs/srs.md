@@ -20,8 +20,7 @@ header-includes:
   - [User Characteristics](#user-characteristics)
     - [Admin](#admin)
     - [Librarian](#librarian)
-    - [Faculty](#faculty)
-    - [Student](#student)
+    - [Faculty/Student](#facultystudent)
     - [User](#user)
   - [Product Functions](#product-functions)
     - [Use Cases related to user management](#use-cases-related-to-user-management)
@@ -69,6 +68,10 @@ header-includes:
       - [View Infomation/FAQs (Frequently Asked Questions)](#view-infomationfaqs-frequently-asked-questions)
       - [View Contact Us](#view-contact-us)
       - [View About Us](#view-about-us)
+- [Non-Functional Requirements/Constraints/Assumptions](#non-functional-requirementsconstraintsassumptions)
+  - [Constraints](#constraints)
+  - [Assumptions](#assumptions)
+  - [Performance Requirements](#performance-requirements)
 - [Appendix](#appendix)
   - [References](#references)
 
@@ -78,7 +81,7 @@ header-includes:
 
 ## Purpose
 
-The purpose of this document is to provide a detailed description of the requirements for the Library Management System for a university. It will explain the purpose and features of the system, the interfaces of the system, what the system will do, the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers of the system.
+The purpose of this document is to provide a detailed description of the requirements for the Library Management System for a university. It will explain the purpose and features of the system, what the system will do, the constraints under which it must operate and how the system will react to external stimuli. This document is intended for both the stakeholders and the developers of the system.
 
 ## Scope
 
@@ -119,33 +122,24 @@ Admin refers to the **administrator** of the library management system. The admi
 
 The librarian is responsible for the following:
 
-- Managing the books in the library.
+- Managing the books/book copies in the library.
 - Managing the E-Resources / Journals in the library.
-- Managing book copies in the library.
-- Issuing books to the users.
+- Issuing books/E-Resources/Journals to the users.
 - Managing and issuing fine to the users.
 
-### Faculty
+### Faculty/Student
 
-The faculty can perform the following actions:
-
-- Issue books from the library.
-- Return books to the library.
-- Read E-Resources / Journals.
-- View the list of books issued or returned by them.
-- Request for new books to be added to the library.
-- Reserve books in advance when they are not available.
-
-### Student
-
-The student can perform the following actions:
+The faculty/student can perform the following actions:
 
 - Issue books from the library.
 - Return books to the library.
 - Read E-Resources / Journals.
 - View the list of books issued or returned by them.
-- Request for new books to be added to the library.
+- Request for new books/E-Resources/Journals to be added to the library.
 - Reserve books in advance when they are not available.
+
+There would be little difference between the actions performed by a faculty and a student.
+Such differences would be values of certain fields in the database.
 
 ### User
 
@@ -994,6 +988,24 @@ In case the user is logged in, they can log out of the system. If the user is no
   2. The system displays the about us page.
 
 \newpage
+
+# Non-Functional Requirements/Constraints/Assumptions
+
+## Constraints
+
+- The system should be secure and only authorized users should be able to access the main functions of library management system.
+- The system should be fault tolerant and should be able to recover from failures.
+
+## Assumptions
+
+- The system will be run on a updated web browser.
+- Admins and librarians will be trained to use the system.
+
+## Performance Requirements
+
+- The system should be able to handle a large number of users at the same time.
+- The system should have a good response time.
+- The system should be easy to use.
 
 # Appendix
 
