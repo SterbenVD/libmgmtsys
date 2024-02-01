@@ -4,6 +4,10 @@ Just a simple library management system made for the Course CS4443: Software Eng
 
 Team Members:
 
+- Nishanth Bhoomi : CS21BTECH11040
+- Rajapu Jayachandra Naidu : CS21BTECH11050
+- Ritvik Sai Chippa : CS21BTECH11054
+- Vishal Vijay Devadiga : CS21BTECH11061
 
 # How to run the project
 
