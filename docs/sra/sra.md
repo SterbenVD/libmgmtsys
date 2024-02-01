@@ -21,6 +21,7 @@ header-includes:
   - [Unadjusted Function Point Count](#unadjusted-function-point-count)
   - [Complexity Adjustment Factor](#complexity-adjustment-factor)
   - [Total Adjusted Function Point Count](#total-adjusted-function-point-count)
+- [References](#references)
 
 \newpage
 
@@ -48,7 +49,6 @@ The user is responsible for:
 
 # Data Flow Diagram(s)
 
-
 The below data flow diagrams show the flow of data in the system. The system is divided into two main parts: the physical world and the digital world. The physical world is the library and the digital world is the online library.
 
 In the physical world, the librarian is responsible for managing the library which includes managing the books/e-resources/journals, and fines. The librarian is also responsible for procuring new books, and managing the existing books and transferring them between the library and the users.
@@ -73,10 +73,12 @@ In the digital world, the librarian is responsible for managing the e-resources 
 
 The first data flow diagram is correct because it shows the flow of data in the system. There is a clear distinction between the physical world and the digital world. From logging in to the system, searching for books/e-resources/journals, issuing a request, and paying fines, the data flow diagram shows the flow of data in the system.
 
-The second data flow diagram is incorrect because 
-- It does not show the flow of data in the system. 
+The second data flow diagram is incorrect because:
+
 - There is no clear distinction between the physical world and the digital world. 
-- It is just a list of actions that the user can perform in the system
+- It is just a list of actions that the user can perform in the system, since there is no clear data flow in the system.
+
+In the first diagram, one can clear the multiple flows possible: After logging in, one can search for books, issue a request, pay fines, etc. or one can search for e-resources/journals, and then read them or instead request a new book/e-resource/journal. In the second diagram, there is no clear flow of data. It is just a list of actions that the user can perform in the system. 
 
 \newpage
 
@@ -129,7 +131,6 @@ Complexity of functions here is estimated based on the number of inputs, outputs
 | Request Issue a book                                      | EI   | Average    | 4   |
 | Return a book                                             | EI   | Average    | 4   |
 | Issue a book                                              | EI   | Average    | 4   |
-| Read E-Resource/Journal                                   | EO   | High       | 7   |
 | View All Issues/Requests/Returns/Reservations of a Member | EQ   | High       | 6   |
 | View All Requests                                         | EQ   | Average    | 4   |
 | Update Request                                            | EI   | Average    | 4   |
@@ -137,15 +138,25 @@ Complexity of functions here is estimated based on the number of inputs, outputs
 | View FAQs                                                 | EQ   | Low        | 3   |
 | View Contact Us                                           | EQ   | Low        | 3   |
 | View About Us                                             | EQ   | Low        | 3   |
-| User Data                                                 | ILF  | Low        | 7   |
-| Book Data                                                 | ILF  | Average    | 10  |
-| E-Resource/Journal Data                                   | ILF  | Average    | 10  |
-| Fine Data                                                 | ILF  | Low        | 7   |
-| Request Data                                              | ILF  | Average    | 10  |
-| Issue Data                                                | ILF  | Average    | 10  |
-| Total                                                     | -    | -          | 232 |
+| Total                                                     | -    | -          | 152 |
 
-Total Unadjusted Function Point Count(Total UFP): $\boxed{232}$
+| Extra Screen            | Type | Complexity | FP  |
+| ----------------------- | ---- | ---------- | --- |
+| Home                    | EO   | High       | 7   |
+| Read E-Resource/Journal | EO   | High       | 7   |
+| Total                   | -    | -          | 14  |
+
+| Database                | Type | Complexity | FP  |
+| ----------------------- | ---- | ---------- | --- |
+| User Data               | ILF  | Low        | 7   |
+| Book Data               | ILF  | Average    | 10  |
+| E-Resource/Journal Data | ILF  | Average    | 10  |
+| Fine Data               | ILF  | Low        | 7   |
+| Request Data            | ILF  | Average    | 10  |
+| Issue Data              | ILF  | Average    | 10  |
+| Total                   | -    | -          | 54  |
+
+Total Unadjusted Function Point Count(Total UFP): $\boxed{220}$
 
 \newpage
 
@@ -177,6 +188,20 @@ Thus, CAF = $0.65 + (0.01 * \sum^{i = 14}_{i = 1} F_i)$ = $0.65 + 0.18 = 0.83$
 
 ## Total Adjusted Function Point Count
 
-Total Adjusted Function Point Count(Total AFP) = Total UFP * CAF = $232 * 0.83 = 192.56 \approx \boxed{193}$
+Total Adjusted Function Point Count(Total AFP) = Total UFP * CAF = $220 * 0.83 = 182.6 \approx \boxed{183}$
 
-Considering that 1 FP = 50-60 LOC, the estimated LOC $= 193 * 50 - 193 * 60 = 9650 - 11580 \approx \boxed{\text{9500 - 11500 LOC}}$
+Considering that 1 FP = 50-60 LOC, the estimated LOC $= 183 * 50 \text{ to } 183 * 60 = 9150 \text{ to } 10980 \approx \boxed{\text{9000 to 11000 LOC}}$
+
+\newpage
+
+# References
+
+Note that: 
+
+- The links below are clickable.
+- The images used in this document are created using [draw.io](https://draw.io).
+
+**References**:
+
+- [Library Management System](https://en.wikipedia.org/wiki/Library_management_system)
+- [Concepts of Function Point Analysis](http://www.functionpointmodeler.com/fpm-infocenter/index.jsp?topic=%2Fcom.functionpointmodeler.fpm.help%2Fditafiles%2Fconcepts%2Fcon-91.html)
