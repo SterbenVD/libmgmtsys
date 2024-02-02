@@ -2,5 +2,5 @@ temp/*
 private/*
 
 # Ignore all files in the build directory
-build/*
+*exec
 
