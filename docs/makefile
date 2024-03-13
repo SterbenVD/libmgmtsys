@@ -7,7 +7,7 @@ SRA_PDF_PATH = pdf/SRA\ Group\ 14.pdf
 SA_PDF_PATH = pdf/SA\ Group\ 14.pdf
 SD_PDF_PATH = pdf/SD\ Group\ 14.pdf
 
-all: create_sd
+all: create_srs create_sra create_sa create_sd
 
 create_srs: ${SRS_PATH}
 	pandoc ${SRS_PATH} -o ${SRS_PDF_PATH}
