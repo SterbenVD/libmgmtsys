@@ -8,14 +8,14 @@ urlcolor: blue
 
 fontsize: 12pt
 header-includes:
-    - \rowcolors{2}{gray!5}{gray!15}
-    - \usepackage{setspace}
-    - \onehalfspacing
+  - \rowcolors{2}{gray!5}{gray!15}
+  - \usepackage{setspace}
+  - \onehalfspacing
 ---
 
-<!-- 
+<!--
 
-Submit a high-level design document for your software. Your report should contain the following sections: 
+Submit a high-level design document for your software. Your report should contain the following sections:
 
 Overview
 
@@ -37,12 +37,12 @@ Design Analysis
 - Count of total number of input, output, coordinate, transform and composite modules in your final structured chart. (show in the form of a table)
 - Identify the most complex or error prone module in input, transformation and output subsystem. Also explain why you feel these modules are most complex or error prone.
 - List the top-3 modules, along with counts, in terms of fan out and fan in?
-Total expected size of your software in terms of LoC. Total LoC for input, transform and output subsystems.  
+Total expected size of your software in terms of LoC. Total LoC for input, transform and output subsystems.
 
 Detailed Design Specification
 
 - Interface of all the final level factored modules.
-- Show it in the form of classes with attributes and methods. 
+- Show it in the form of classes with attributes and methods.
 
 -->
 
@@ -54,19 +54,19 @@ The Library Management System is a software application that is designed to mana
 
 The system will:
 
-- Provide a user-friendly interface for the library staff to manage the library resources, such as books, journals, and other e-resources. 
-- Provide a user interface for the library members to search for and borrow library resources. 
-- Automate the process of managing the library resources, including the cataloging, circulation, and inventory management. 
+- Provide a user-friendly interface for the library staff to manage the library resources, such as books, journals, and other e-resources.
+- Provide a user interface for the library members to search for and borrow library resources.
+- Automate the process of managing the library resources, including the cataloging, circulation, and inventory management.
 - Provide reports and analytics to help the library staff to make informed decisions about the library operations.
 
 ## Purpose
 
-The purpose of this document is to provide a detailed software design for the Library Management System. 
+The purpose of this document is to provide a detailed software design for the Library Management System.
 
-The design proposed in this document is based on the requirements and specifications provided in the Software Requirements Specification (SRS) document. 
+The design proposed in this document is based on the requirements and specifications provided in the Software Requirements Specification (SRS) document.
 
-The design will include the data flow diagram, structured charts, design analysis, and detailed design specifications. 
-This will serve as a guide for the development team to implement the system according to the requirements and specifications. 
+The design will include the data flow diagram, structured charts, design analysis, and detailed design specifications.
+This will serve as a guide for the development team to implement the system according to the requirements and specifications.
 
 This document will be used as a reference for the development, testing, and maintenance of the Library Management System.
 
@@ -80,23 +80,23 @@ This shows the flow of data between different components of the system. It also 
 
 Here the DFD is divided into multiple parts, each part showing the data flow for either a user role, or a specific part of the system.
 
-![DFD - Member Part 1](./sd/dfd-user-1.png)
+![DFD - Member Part 1](./images/dfd-user-1.png)
 
-![DFD - Member Part 2](./sd/dfd-user-2.png)
+![DFD - Member Part 2](./images/dfd-user-2.png)
 
-![DFD - Member Part 3](./sd/dfd-user-3.png)
+![DFD - Member Part 3](./images/dfd-user-3.png)
 
-![DFD - Librarian Part 1](./sd/dfd-librarian-1.png)
+![DFD - Librarian Part 1](./images/dfd-librarian-1.png)
 
-![DFD - Librarian Part 2](./sd/dfd-librarian-2.png)
+![DFD - Librarian Part 2](./images/dfd-librarian-2.png)
 
 \newpage
 
-![DFD - Authentication Part](./sd/dfd-auth.png){ height=375px }
+![DFD - Authentication Part](./images/dfd-auth.png){ height=375px }
 
 Here, in the authentication part, the user can login, logout. Here, user-details and login details are the MAI and the status is the MAO.
 
-![DFD - Admin Part](./sd/dfd-admin.png)
+![DFD - Admin Part](./images/dfd-admin.png)
 
 Here, in the admin part, the admin can add, remove, or update the members of the library. Here "Member Details" is the MAI(Most abstract input) and the "Status" is the MAO(Most abstract output).
 
@@ -108,7 +108,7 @@ Considering that the arguments to the functions are going to be objects of custo
 
 ## Book Details
 
-This custom data-type is used to store the details of a book. 
+This custom data-type is used to store the details of a book.
 
 ```python
 
@@ -123,6 +123,7 @@ class bookdetails {
 }
 
 ```
+
 Thus, it has 7 attributes.
 
 Here,
@@ -137,7 +138,7 @@ Here,
 
 ## E-Resource Details
 
-This custom data-type is used to store the details of an e-resource. 
+This custom data-type is used to store the details of an e-resource.
 
 ```python
 
@@ -165,7 +166,7 @@ Here,
 
 ## Member Details
 
-This custom data-type is used to store the details of a member. 
+This custom data-type is used to store the details of a member.
 
 ```python
 
@@ -193,7 +194,7 @@ Here,
 
 ## Fine Details
 
-This custom data-type is used to store the details of a fine. 
+This custom data-type is used to store the details of a fine.
 
 ```python
 
@@ -219,7 +220,7 @@ Here,
 
 ## Request Details
 
-This custom data-type is used to store the details of a request. 
+This custom data-type is used to store the details of a request.
 
 ```python
 
@@ -243,7 +244,7 @@ Here,
 
 ## Issue Details
 
-This custom data-type is used to store the details of an issue. 
+This custom data-type is used to store the details of an issue.
 
 ```python
 
@@ -269,7 +270,7 @@ Here,
 
 ## Statistics
 
-This custom data-type is used to store the statistics of a member. 
+This custom data-type is used to store the statistics of a member.
 
 ```python
 
@@ -297,7 +298,7 @@ Here,
 
 ## Profile Details
 
-This custom data-type is used to store the details of a member profile. 
+This custom data-type is used to store the details of a member profile.
 
 ```python
 class profileDetails {
@@ -316,7 +317,7 @@ Here,
 
 ## Session Details
 
-This custom data-type is used to store the details of a session of a user. 
+This custom data-type is used to store the details of a session of a user.
 
 ```python
 
@@ -340,7 +341,7 @@ Here,
 
 ## Catalog Details
 
-This custom data-type is used to store the details of the catalog of the library. 
+This custom data-type is used to store the details of the catalog of the library.
 
 ```python
 
@@ -421,7 +422,7 @@ The number of arguments when used in functions are:
 
 The first level structured chart for the Library Management System is shown below:
 
-![First Level Structured Chart](./sd/flsc.png)
+![First Level Structured Chart](./images/flsc.png)
 
 There are a total of 5 parent modules in the system. The details of the modules are as follows:
 
@@ -437,9 +438,9 @@ There are a total of 5 parent modules in the system. The details of the modules 
 
 The structured chart for the `Authentication Module` is shown below:
 
-![Authentication Module Structured Chart](./sd/auth-msc.png)
+![Authentication Module Structured Chart](./images/auth-msc.png)
 
-This module is responsible for handling the authentication of the users. 
+This module is responsible for handling the authentication of the users.
 It is a co-ordinate module.
 It has a logical cohesion.
 
@@ -486,8 +487,8 @@ Thus,
 
 ### `Session Management`
 
-The `Session Management submodule` is responsible for managing the user sessions. 
-It is a Coordinate module. 
+The `Session Management submodule` is responsible for managing the user sessions.
+It is a Coordinate module.
 It has logical cohesion within its submodules.
 
 It has the following submodules:
@@ -506,8 +507,8 @@ It has the following submodules:
 
 Below are the summaries of the submodules:-
 
-The `Login` submodule is a input submodule and is responsible for handling the login input of the user. 
-It has functional cohesion. 
+The `Login` submodule is a input submodule and is responsible for handling the login input of the user.
+It has functional cohesion.
 It takes `username` and `password` as input.
 It returns a status indicating whether the login is successful or not.
 
@@ -536,7 +537,7 @@ It returns a status indicating whether the user is authenticated or not.
 
 The `Validate Authentication` submodule is responsible for validating the authentication of the user.
 It is a transform submodule.
-It has sequential cohesion. 
+It has sequential cohesion.
 It is a large module due to the complexity of validating the authentication of the user.
 It takes `user_id` and the `action` as input.
 It returns a status indicating whether the user is authenticated or not.
@@ -555,7 +556,7 @@ It returns a status indicating whether the user is authenticated or not.
 
 The structured chart for the `Admin Module` is shown below:
 
-![Admin Module Structured Chart](./sd/admin-msc.png)
+![Admin Module Structured Chart](./images/admin-msc.png)
 
 This module is responsible for handling the admin interactions with the system. It handles the admin input and output . It is a co-ordinate module and has a logical cohesion.
 
@@ -598,7 +599,7 @@ Thus,
 
 Below are the summaries of the submodules:-
 
-`Add Member` is a input submodule and is responsible for handling the input for adding a member to the library. 
+`Add Member` is a input submodule and is responsible for handling the input for adding a member to the library.
 It has functional cohesion.
 It takes `memberDetails` as input.
 It returns a status indicating whether the member is added successfully or not.
@@ -638,7 +639,7 @@ It returns the details of the member if the member is present in the library.
 
 The structured chart for the `Librarian Module` is shown below:
 
-![Librarian Module Structured Chart](./sd/librarian-msc.png)
+![Librarian Module Structured Chart](./images/librarian-msc.png)
 
 This module is responsible for handling the librarian interactions with the system. It handles the librarian input and output. It is a co-ordinate module and has a logical cohesion.
 
@@ -746,7 +747,7 @@ Thus,
 
 ### `Book Management`
 
-![Librarian Book Management Structured Chart](./sd/librarian-book-msc.png)
+![Librarian Book Management Structured Chart](./images/librarian-book-msc.png)
 
 The `Book Management` submodule is responsible for managing the books in the library.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -807,7 +808,7 @@ It returns the details of the book if the book is present in the library.
 
 ### `E-Resource Management`
 
-![Librarian E-Resource Management Structured Chart](./sd/librarian-eresource-msc.png)
+![Librarian E-Resource Management Structured Chart](./images/librarian-eresource-msc.png)
 
 The `E-Resource Management` submodule is responsible for managing the e-resources in the library.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -854,7 +855,7 @@ It returns the details of the e-resource if the e-resource is present in the lib
 
 ### `Issue Management`
 
-![Librarian Issue Management Structured Chart](./sd/librarian-issue-msc.png)
+![Librarian Issue Management Structured Chart](./images/librarian-issue-msc.png)
 
 The `Issue Management` submodule is responsible for managing the issues of the library resources.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -899,7 +900,7 @@ It returns the list of unresolved issues of the library.
 
 ### `Fine Management`
 
-![Librarian Fine Management Structured Chart](./sd/librarian-fine-msc.png)
+![Librarian Fine Management Structured Chart](./images/librarian-fine-msc.png)
 
 The `Fine Management` submodule is responsible for managing the fines of the library members.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -944,7 +945,7 @@ It returns the list of unresolved fines of the library members.
 
 ### `Request Management`
 
-![Librarian Request Management Structured Chart](./sd/librarian-request-msc.png)
+![Librarian Request Management Structured Chart](./images/librarian-request-msc.png)
 
 The `Request Management` submodule is responsible for managing the requests of the library members.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -996,7 +997,7 @@ It returns the details of the request if the request is present in the library.
 
 The structured chart for the `Member Module` is shown below:
 
-![Member Module Structured Chart](./sd/member-msc.png)
+![Member Module Structured Chart](./images/member-msc.png)
 
 This module is responsible for handling the user interactions with the system. It handles the user input and output. It is a co-ordinate module and has a logical cohesion.
 
@@ -1086,10 +1087,9 @@ Thus,
 | PayFine              | 1      | 1       | 2     |
 | ViewFineDetails      | 1      | 5       | 6     |
 
-
 ### `Information Module`
 
-![Member Information Module Structured Chart](./sd/member-info-msc.png)
+![Member Information Module Structured Chart](./images/member-info-msc.png)
 
 The `Information Module` submodule is responsible for providing the information to the user.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -1150,7 +1150,7 @@ It returns the text of the e-resource if the e-resource is present in the librar
 
 ### `Profile Management`
 
-![Member Profile Management Structured Chart](./sd/member-profile-msc.png)
+![Member Profile Management Structured Chart](./images/member-profile-msc.png)
 
 The `Profile Management` submodule is responsible for managing the profile of the user.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -1183,7 +1183,7 @@ It returns the profile of the user.
 
 ### `Reservation Module`
 
-![Member Reservation Module Structured Chart](./sd/member-reservation-msc.png)
+![Member Reservation Module Structured Chart](./images/member-reservation-msc.png)
 
 The `Reservation Module` submodule is responsible for managing the reservations of the library resources.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -1212,7 +1212,7 @@ It returns a status indicating whether the reservation details are valid or not.
 
 ### `Request Module`
 
-![Member Request Module Structured Chart](./sd/member-request-msc.png)
+![Member Request Module Structured Chart](./images/member-request-msc.png)
 
 The `Request Module` submodule is responsible for managing the requests of the library resources.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -1246,7 +1246,7 @@ It returns a status indicating whether the request details are valid or not.
 
 ### `Fine Module`
 
-![Member Fine Module Structured Chart](./sd/member-fine-msc.png)
+![Member Fine Module Structured Chart](./images/member-fine-msc.png)
 
 The `Fine Module` submodule is responsible for managing the fines of the library members.
 It is a Coordinate module. It has logical cohesion within its submodules.
@@ -1287,12 +1287,12 @@ It returns the details of the fine if the fine is present in the library.
 
 The structured chart for the `Render Module` is shown below:
 
-![Render Module Structured Chart](./sd/render-msc-1.png)
+![Render Module Structured Chart](./images/render-msc-1.png)
 
-![Render Module Structured Chart](./sd/render-msc-2.png)
+![Render Module Structured Chart](./images/render-msc-2.png)
 
-This module is responsible for rendering the output to the user. 
-It is a output module and has a logical cohesion. 
+This module is responsible for rendering the output to the user.
+It is a output module and has a logical cohesion.
 It has a very high coupling with the `Member Module`, `Librarian Module`, and `Admin Module`.
 
 Note that the `Render Module` is a frontend module and the code will be implemented in the frontend technology used. The code estimates are based on the complexity of the frontend technology used.
@@ -1429,14 +1429,13 @@ The top-3 modules with the highest fan-in and fan-out are:
 - `View Profile` in the `Profile Management` submodule of the `Member Module` has the highest total of 13, with fan-out of 12 and fan-in of 1.
 - `Update Book` in the `Book Management` submodule of the `Librarian Module` has the second highest total of 9 with fan-out of 1 and fan-in of 8.
 - There are multiple submodules with the third highest total of 8, which includes:
-  -  `Update Member` in the `Member Management` submodule of the `Admin Module`
-  -  `Add Book` in the `Book Management` submodule of the `Librarian Module`
-  -  `Validate Book Details` in the `Book Management` submodule of the `Librarian Module`
-  -  `View Book` in the `Book Management` submodule of the `Librarian Module`
-  -  `Update E-Resource` in the `E-Resource Management` submodule of the `Librarian Module`
-  -  `View Book Details` in the `Information Module` submodule of the `Member Module`
-  -  `Update Profile` in the `Profile Management` submodule of the `Member Module`
-
+  - `Update Member` in the `Member Management` submodule of the `Admin Module`
+  - `Add Book` in the `Book Management` submodule of the `Librarian Module`
+  - `Validate Book Details` in the `Book Management` submodule of the `Librarian Module`
+  - `View Book` in the `Book Management` submodule of the `Librarian Module`
+  - `Update E-Resource` in the `E-Resource Management` submodule of the `Librarian Module`
+  - `View Book Details` in the `Information Module` submodule of the `Member Module`
+  - `Update Profile` in the `Profile Management` submodule of the `Member Module`
 
 ## Count of Modules and LoC
 

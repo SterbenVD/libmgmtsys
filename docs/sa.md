@@ -7,11 +7,10 @@ classoption: table
 urlcolor: blue
 fontsize: 12pt
 header-includes:
-    - \rowcolors{2}{gray!5}{gray!15}
-    - \usepackage{setspace}
-    - \onehalfspacing
+  - \rowcolors{2}{gray!5}{gray!15}
+  - \usepackage{setspace}
+  - \onehalfspacing
 ---
-
 
 # Index
 
@@ -67,7 +66,7 @@ The system will manage the following:
 - Fines
 - Book issues, returns, reservations and requests
 
-\newpage 
+\newpage
 
 # Architecture Design
 
@@ -103,14 +102,14 @@ The components used are:
 
 ## Architecture 1: Shared Data Architecture
 
-The **database** centric architecture is a simple and straightforward architecture in which the database is the central component of the system. 
-The **client** interacts with the database directly to perform operations related to **data**. 
-The database is responsible for processing the user input and generating the output. 
+The **database** centric architecture is a simple and straightforward architecture in which the database is the central component of the system.
+The **client** interacts with the database directly to perform operations related to **data**.
+The database is responsible for processing the user input and generating the output.
 The client is responsible for displaying the output to the user and processing the user input.
 
-![SDA](./sa/SDA.drawio.png)
+![SDA](./images/SDA.drawio.png)
 
-Considering the above architecture, **except for the cache and server component**, all other components are present in this architecture. 
+Considering the above architecture, **except for the cache and server component**, all other components are present in this architecture.
 
 \newpage
 
@@ -121,7 +120,7 @@ The **server** is responsible for processing the user input and generating the o
 The **client** is responsible for displaying the output to the user and sending the user input to the server.
 The **server** also interacts with the **database** to fetch and store data.
 
-![CSA](./sa/CSA.drawio.png)
+![CSA](./images/CSA.drawio.png)
 
 Considering the above architecture, **except for the cache component**, all other components are present in this architecture.
 
@@ -136,7 +135,7 @@ The **server** interacts with the **caching** layer to fetch and store data.
 
 Most of the functions are similar to the client server architecture, except for the addition of the **caching** layer and the interaction between the **server** and the **caching** layer.
 
-![CSL](./sa/CSL.drawio.png)
+![CSL](./images/CSL.drawio.png)
 
 All components mentioned above are present in this architecture.
 
@@ -206,7 +205,7 @@ The client server architecture with a caching layer is more complex than the cli
 
 ## Design Rationale
 
-To summarize the comparison of the three architectures:- 
+To summarize the comparison of the three architectures:-
 
 | Factor                          | SDA    | CSA  | CSL    |
 | ------------------------------- | ------ | ---- | ------ |
@@ -221,7 +220,7 @@ To summarize the comparison of the three architectures:-
 
 where SDA is Shared Data Architecture, CSA is Client Server Architecture and CSL is Client Server Architecture with Caching Layer.
 
-Considering the factors mentioned in the comparison above, we have decided to go with the client server architecture. 
+Considering the factors mentioned in the comparison above, we have decided to go with the client server architecture.
 
 While the caching layer in the second architecture provides better performance, it also increases the complexity of the system. The client server architecture is a simpler and more maintainable architecture that is well suited for the requirements of the Library Management System.
 

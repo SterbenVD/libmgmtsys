@@ -1,13 +1,18 @@
-SRS_PATH = srs/srs.md
-SRA_PATH = sra/sra.md
-SA_PATH = sa/sa.md
-SD_PATH = sd/sd.md
+SRS_PATH = srs.md
+SRA_PATH = sra.md
+SA_PATH = sa.md
+SD_PATH = sd.md
+TP_PATH = tp.md
 SRS_PDF_PATH = pdf/SRS\ Group\ 14.pdf
 SRA_PDF_PATH = pdf/SRA\ Group\ 14.pdf
 SA_PDF_PATH = pdf/SA\ Group\ 14.pdf
 SD_PDF_PATH = pdf/SD\ Group\ 14.pdf
+TP_PDF_PATH = pdf/TP\ Group\ 14.pdf
 
-all: create_srs create_sra create_sa create_sd
+create_tp: ${TP_PATH}
+	pandoc ${TP_PATH} --highlight-style pygments -o ${TP_PDF_PATH}
+
+all: create_srs create_sra create_sa create_sd create_tp
 
 create_srs: ${SRS_PATH}
 	pandoc ${SRS_PATH} -o ${SRS_PDF_PATH}
@@ -26,3 +31,4 @@ clean:
 	rm -f $(SRA_PDF_PATH)
 	rm -f $(SA_PDF_PATH)
 	rm -f $(SD_PDF_PATH)
+	rm -f $(TP_PDF_PATH)

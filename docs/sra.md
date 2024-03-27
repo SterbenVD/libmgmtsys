@@ -5,11 +5,12 @@ geometry: margin=1.5cm
 documentclass: extarticle
 fontsize: 12pt
 header-includes:
-    - \usepackage{setspace}
-    - \onehalfspacing
+  - \usepackage{setspace}
+  - \onehalfspacing
 ---
 
 # Index
+
 - [Index](#index)
 - [Context Diagram](#context-diagram)
 - [Data Flow Diagram(s)](#data-flow-diagrams)
@@ -27,9 +28,9 @@ header-includes:
 
 # Context Diagram
 
-![Context Diagram](./sra/context.drawio.png)
+![Context Diagram](./images/context.drawio.png)
 
-This context diagram show an overview of the system. There are two main actors in the system: the librarian and the user. 
+This context diagram show an overview of the system. There are two main actors in the system: the librarian and the user.
 
 The librarian is responsible for:
 
@@ -57,15 +58,15 @@ In the digital world, the librarian is responsible for managing the e-resources 
 
 ## Data Flow Diagram: 1
 
-![Data Flow Diagram: 1](./sra/dfd-correct.drawio.png)
+![Data Flow Diagram: 1](./images/dfd-correct.drawio.png)
 
 \newpage
 
 ## Data Flow Diagram: 2
 
-![Data Flow Diagram: 2.1](./sra/dfd-incorrect-1.drawio.png)
+![Data Flow Diagram: 2.1](./images/dfd-incorrect-1.drawio.png)
 
-![Data Flow Diagram: 2.2](./sra/dfd-incorrect-2.drawio.png)
+![Data Flow Diagram: 2.2](./images/dfd-incorrect-2.drawio.png)
 
 \newpage
 
@@ -75,10 +76,10 @@ The first data flow diagram is correct because it shows the flow of data in the 
 
 The second data flow diagram is incorrect because:
 
-- There is no clear distinction between the physical world and the digital world. 
+- There is no clear distinction between the physical world and the digital world.
 - It is just a list of actions that the user can perform in the system, since there is no clear data flow in the system.
 
-In the first diagram, one can clear the multiple flows possible: After logging in, one can search for books, issue a request, pay fines, etc. or one can search for e-resources/journals, and then read them or instead request a new book/e-resource/journal. In the second diagram, there is no clear flow of data. It is just a list of actions that the user can perform in the system. 
+In the first diagram, one can clear the multiple flows possible: After logging in, one can search for books, issue a request, pay fines, etc. or one can search for e-resources/journals, and then read them or instead request a new book/e-resource/journal. In the second diagram, there is no clear flow of data. It is just a list of actions that the user can perform in the system.
 
 \newpage
 
@@ -190,11 +191,11 @@ where $F_i$ is the value adjusted for each of the 14 general system characterist
 | Facilitate change              | 2     |
 | Total                          | 18    |
 
-Thus, CAF = $0.65 + (0.01 * \sum^{i = 14}_{i = 1} F_i)$ = $0.65 + 0.18 = 0.83$ 
+Thus, CAF = $0.65 + (0.01 * \sum^{i = 14}_{i = 1} F_i)$ = $0.65 + 0.18 = 0.83$
 
 ## Total Adjusted Function Point Count
 
-Total Adjusted Function Point Count(Total AFP) = Total UFP * CAF = $249 * 0.83 = 206.67 \approx \boxed{207}$
+Total Adjusted Function Point Count(Total AFP) = Total UFP _ CAF = $249 _ 0.83 = 206.67 \approx \boxed{207}$
 
 Considering that 1 FP = 50-60 LOC, the estimated LOC $= 207 * 50 \text{ to } 207 * 60 = 10350 \text{ to } 12420 \approx \boxed{\text{10000 to 12500 LOC}}$
 
@@ -202,7 +203,7 @@ Considering that 1 FP = 50-60 LOC, the estimated LOC $= 207 * 50 \text{ to } 207
 
 # References
 
-Note that: 
+Note that:
 
 - The links below are clickable.
 - The images used in this document are created using [draw.io](https://draw.io).
